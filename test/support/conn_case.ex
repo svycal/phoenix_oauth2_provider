@@ -21,7 +21,8 @@ defmodule PhoenixOauth2Provider.ConnCase do
 
   using do
     quote do
-      use ConnTest
+      import Plug.Conn
+      import Phoenix.ConnTest
 
       alias Helpers, as: Routes
 
@@ -33,6 +34,7 @@ defmodule PhoenixOauth2Provider.ConnCase do
     unless tags[:async] do
       :ok = Sandbox.checkout(Repo)
     end
+
     {:ok, conn: ConnTest.build_conn()}
   end
 end
