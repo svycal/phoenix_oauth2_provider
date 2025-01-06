@@ -35,18 +35,17 @@ defmodule PhoenixOauth2Provider.Mixfile do
 
   defp deps do
     [
-      {:ex_oauth2_provider,
-       git: "https://github.com/svycal/ex_oauth2_provider.git", ref: "update_deps", override: true},
+      {:ex_oauth2_provider, "~> 0.5.7"},
       {:phoenix, "~> 1.7"},
       {:phoenix_html, "~> 2.0"},
       {:phoenix_view, "~> 2.0"},
       {:phoenix_ecto, "~> 4.0.0", only: [:test, :dev]},
       {:credo, "~> 1.1.0", only: [:dev, :test]},
-      {:jason, "~> 1.0", only: [:dev, :test]},
+      {:jason, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:ecto_sql, "~> 3.8", only: :test},
+      {:ecto_sql, "~> 3.10", only: :test},
       {:plug_cowboy, "~> 2.0", only: :test},
-      {:postgrex, "~> 0.15.0", only: :test}
+      {:postgrex, "~> 0.16 or ~> 1.0", only: :test}
     ]
   end
 
